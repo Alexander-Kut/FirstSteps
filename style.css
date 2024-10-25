@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    padding-left: 15px;
+    font-size: 30px;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+.title:hover {
+    background-color: aqua;
+    transform: scale(1.1);
+}
