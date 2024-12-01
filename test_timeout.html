@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function uploadCompleted() {
+            console.log("Загрузка файла завершена");
+
+            console.log("Обработка файла...");
+
+            setTimeout(() => {
+                console.log("Файл обработан");
+
+                console.log("Сохранение файла...");
+
+                setTimeout(() => {
+                    console.log("Файл успешно сохранен. Файл готов к использованию");
+                }, 1000);
+            }, 2000);
+        }
+
+        function startUpload(callback) {
+            console.log("Начало загрузки файла...");
+
+            let progress = 0;
+            const intervalId = setInterval(() => {
+                progress += Math.floor(Math.random() * 10 + 5);
+
+                console.log(`Прогресс: ${progress} %`);
+
+                if (progress >= 100) {
+                    clearInterval(intervalId);
+                    console.log("Загрузка завершена");
+
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 2000);
+        }
+        startUpload(uploadCompleted);
+    </script>
+</body>
+</html>
