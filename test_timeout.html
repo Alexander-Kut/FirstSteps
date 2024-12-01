@@ -28,11 +28,14 @@
 
             let progress = 0;
             const intervalId = setInterval(() => {
-                progress += Math.floor(Math.random() * 10 + 5);
+                progress += Math.floor(Math.random() * 7 + 3);
 
                 console.log(`Прогресс: ${progress} %`);
 
                 if (progress >= 100) {
+                    if (progress >= 90) {
+                        console.log(`Прогресс: 100 %`);
+                    }
                     clearInterval(intervalId);
                     console.log("Загрузка завершена");
 
